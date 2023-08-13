@@ -12,11 +12,11 @@ const Videos = ({ videos, direction }) => {
       gap={2}
     >
       {videos?.map((item, idx) => (
-        <Box key={idx}>
-          {item.id.videoId && <VideoCard video={item} />}
+        <>
+          {item.id.videoId && <VideoCard video={item} key={idx} />}
           {/* check if its a vid or channel*/}
-          {item.id.channelId && <ChannelCard Channel={item} />}
-        </Box>
+          {item.id.channelId && <ChannelCard Channel={item} key={idx} />}
+        </>
       ))}
     </Stack>
   );
